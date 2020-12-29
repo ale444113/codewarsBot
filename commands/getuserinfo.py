@@ -23,7 +23,7 @@ async def getuserinfo(message,args):
     if skills != '': skills = skills[:len(skills)-2] 
     if skills == '': skills = "N/A"
     embed_with_user_data.add_field(name="⌨️ Languagues and skills 📱", value=f"Languages: {languages} \n Skills: {skills}", inline=False)
-    embed_with_user_data.add_field(name="💻 Code Challengues 💾", value=f"Authored: {data['codeChallenges']['totalAuthored']} \n Completed: {data['codeChallenges']['totalCompleted']}", inline=False)
+    embed_with_user_data.add_field(name="💻 Code Challengues 💾", value=f"Authored: {data['codeChallenges']['totalAuthored']} \n Completed: {data['codeChallenges']['totalCompleted']}", inline=True)
     embed_with_user_data.set_image(url="https://image.flaticon.com/icons/png/512/37/37631.png")
     embed_with_user_data.set_footer(text="Made by: ale444113#6621")
     await message.channel.send(embed=embed_with_user_data)
