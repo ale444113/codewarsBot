@@ -1,0 +1,7 @@
+git+https://github.com/Rapptz/discord.py
+PyNaCl
+dnspython
+panda
+async
+python-dotenv
+psycopg2
