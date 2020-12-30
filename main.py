@@ -9,7 +9,7 @@ from commands.authors import authors
 from commands.github import github
 from commands.getrandomkata import getrandomkata
 from commands.topics import topics
-from commands.languagues import languagues
+from commands.languages import languages
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -47,6 +47,6 @@ async def on_message(message):
     elif cmd.lower() == "github" or cmd.lower() == "githubs": await github(message,args)
     elif cmd.lower() == "getrandomkata": await getrandomkata(message,args, PREFIX)
     elif cmd.lower() == "topics" or cmd.lower() == "topic": await topics(message,args)
-    elif cmd.lower() == "languages" or cmd.lower() == "language": await languagues(message,args)
+    elif cmd.lower() == "languages" or cmd.lower() == "language": await languages(message,args)
 
 client.run(TOKEN)

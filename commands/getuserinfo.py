@@ -24,6 +24,16 @@ async def getuserinfo(message,args):
     if skills == '': skills = "N/A"
     embed_with_user_data.add_field(name="⌨️ Languagues and skills 📱", value=f"Languages: {languages} \n Skills: {skills}", inline=False)
     embed_with_user_data.add_field(name="💻 Code Challengues 💾", value=f"Authored: {data['codeChallenges']['totalAuthored']} \n Completed: {data['codeChallenges']['totalCompleted']}", inline=True)
-    embed_with_user_data.set_image(url="https://www.codewars.com/assets/landing/copy-rank-a488586819ed6c3c20d40f25ec5ced58f67af8691f844165a4225d7df03bed94.png")
+    
+    kyu_level = data['ranks']['overall']['rank']
+    if kyu_level == -1: embed_with_user_data.set_image(url="https://i.ibb.co/16whS56/1.png")
+    elif kyu_level == -2: embed_with_user_data.set_image(url="https://i.ibb.co/MDBvfKw/2.png")
+    elif kyu_level == -3: embed_with_user_data.set_image(url="https://i.ibb.co/7kn00Jt/3.png")
+    elif kyu_level == -4: embed_with_user_data.set_image(url="https://i.ibb.co/TRH8Y6b/4.png")
+    elif kyu_level == -5: embed_with_user_data.set_image(url="https://i.ibb.co/q9x4W6F/5.png")
+    elif kyu_level == -6: embed_with_user_data.set_image(url="https://i.ibb.co/dLmn8Tx/6.png")
+    elif kyu_level == -7: embed_with_user_data.set_image(url="https://i.ibb.co/G96g8Cd/7.png")
+    elif kyu_level == -8: embed_with_user_data.set_image(url="https://i.ibb.co/K0YdSVc/8.png")
+
     embed_with_user_data.set_footer(text="Made by: ale444113#6621")
     await message.channel.send(embed=embed_with_user_data)

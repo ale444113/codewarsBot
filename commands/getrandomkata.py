@@ -9,7 +9,7 @@ async def get_and_check_languague(l,message,prefix,args):
     language = l.lower().capitalize()
     if language == "C++": language = "Cpp"
     if language not in languages:
-        await message.channel.send(f"{message.author.mention}, {args[len(args)-1]} is not a language, to see a list of languages use {prefix}languagues")
+        await message.channel.send(f"{message.author.mention}, {args[len(args)-1]} is not a language, to see a list of languages use {prefix}languages")
         return False
     return language
 #It check if the level(l) exist and if it does return the level, if it doesn't exist it return False
