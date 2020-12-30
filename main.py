@@ -34,7 +34,7 @@ async def on_guild_join(guild):
     embedVar.set_footer(text="Made by: ale444113#6621")
 
     print(f"I just joined {guild.name} (id: {guild.id})")
-    n_servers = 0 += 1
+    n_servers += 1
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=f" codewars.com | Active in {n_servers}"))#Set the presence again
 
     await guild.text_channels[0].send(embed=embedVar)
