@@ -17,9 +17,11 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 client = discord.Client()
 
 PREFIX = "!?"
+
 n_servers = 0
 @client.event
 async def on_ready():
+    global n_servers
     for guild in client.guilds:
         print(f"I'm in {guild.name} (id: {guild.id})")
         n_servers+=1
@@ -27,6 +29,7 @@ async def on_ready():
 
 @client.event
 async def on_guild_join(guild):
+    global n_servers
     embedVar = discord.Embed(title="Say hi!", description="codewarsBot has joined the server", color=0x0000FF)
     embedVar.add_field(name="Prefix", value=f"My prefix is {PREFIX} 😃", inline=False)
     embedVar.add_field(name="Get help", value=f"Use {PREFIX}help to see a list of commands n.n", inline=False)
@@ -40,6 +43,7 @@ async def on_guild_join(guild):
     await guild.text_channels[0].send(embed=embedVar)
 @client.event
 async def on_guild_remove(guild):
+    global n_servers
     print(f"I was removed from {guild.name} (id: {guild.id})")
     n_servers -= 1
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=f" codewars.com | Active in {n_servers}"))#Set the presence again
