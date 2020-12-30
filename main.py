@@ -1,6 +1,15 @@
 import discord, os, requests
-from commands.getuserinfo import getuserinfo
 from dotenv import load_dotenv
+
+from commands.getuserinfo import getuserinfo
+from commands.getkatainfo import getkatainfo
+from commands.helpcodewars import helpcodewars
+from commands.invite import invite
+from commands.authors import authors
+from commands.github import github
+from commands.getrandomkata import getrandomkata
+from commands.topics import topics
+from commands.languagues import languagues
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -31,5 +40,13 @@ async def on_message(message):
     args.remove(args[0])
 
     if cmd.lower() == "getuserinfo": await getuserinfo(message,args)
-        
+    elif cmd.lower() == "getkatainfo": await getkatainfo(message,args)
+    elif cmd.lower() == "help": await helpcodewars(message,args, PREFIX)
+    elif cmd.lower() == "invite": await invite(message,args)
+    elif cmd.lower() == "authors" or cmd.lower() == "author": await authors(message,args)
+    elif cmd.lower() == "github" or cmd.lower() == "githubs": await github(message,args)
+    elif cmd.lower() == "getrandomkata": await getrandomkata(message,args, PREFIX)
+    elif cmd.lower() == "topics" or cmd.lower() == "topic": await topics(message,args)
+    elif cmd.lower() == "languagues" or cmd.lower() == "languague": await languagues(message,args)
+
 client.run(TOKEN)
