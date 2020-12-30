@@ -1,6 +1,6 @@
 import discord, requests
 async def helpcodewars(message,args,prefix):
-    embed_helpcodewars = discord.Embed(title="Available Commands", color=0x00ff00)
+    embed_helpcodewars = discord.Embed(title="Available Commands", color=0xff0000)
     embed_helpcodewars.add_field(name=f"{prefix}getuserinfo", value="```Returns specified user's info. \n args: !?getuserinfo <valid username> ```", inline=False)
     embed_helpcodewars.add_field(name=f"{prefix}getkatainfo", value="```Returns specified kata's info. \n args: !?getkatainfo <valid kata name>```", inline=False)
     embed_helpcodewars.add_field(name=f"{prefix}getrandomkata", value="```Returns a random kata, also you can specify the expected kyu, topic and language. \n args: !?getrandomkata N/A \n !?getrandomkata <kyu topic language>```", inline=False)
