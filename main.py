@@ -17,10 +17,13 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 client = discord.Client()
 
 PREFIX = "!?"
-
+n_servers = 0
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=" people coding"))#Set the presence
+    for guild in client.guilds:
+        print(f"I'm in {guild.name} (id: {guild.id})")
+        n_servers+=1
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=f" codewars.com | Active in {n_servers}"))#Set the presence
 
 @client.event
 async def on_guild_join(guild):
@@ -30,8 +33,16 @@ async def on_guild_join(guild):
     embedVar.set_image(url="https://jungladigital.com/wp-content/uploads/2019/03/codewars-800-350.png")
     embedVar.set_footer(text="Made by: ale444113#6621")
 
-    await guild.text_channels[0].send(embed=embedVar)
+    print(f"I just joined {guild.name} (id: {guild.id})")
+    n_servers = 0 += 1
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=f" codewars.com | Active in {n_servers}"))#Set the presence again
 
+    await guild.text_channels[0].send(embed=embedVar)
+@client.event
+    async def on_guild_remove(guild):
+        print(f"I was removed from {guild.name} (id: {guild.id})")
+        n_servers -= 1
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=f" codewars.com | Active in {n_servers}"))#Set the presence again
 @client.event
 async def on_message(message):
     args = message.content.split(' ')
