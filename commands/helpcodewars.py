@@ -8,5 +8,5 @@ async def helpcodewars(message,args,prefix):
     embed_helpcodewars.add_field(name=f"{prefix}github", value="```Returns the project's GitHub repository. \n args: !?github N/A```", inline=False)
     embed_helpcodewars.add_field(name=f"{prefix}languages", value="```Returns Codewars supported languages. \n args: !?languages N/A```", inline=False)
     embed_helpcodewars.add_field(name=f"{prefix}topics", value="```Returns available topics. \n args: !?topics N/A```", inline=False)
-    embed_helpcodewars.add_field(name=f"{prefix}authors", value="```Info about the devs :) . \n args: !?authors N/A```", inline=False)
+    embed_helpcodewars.add_field(name=f"{prefix}authors", value="```Info about the devs :) \n args: !?authors N/A```", inline=False)
     await message.channel.send(embed=embed_helpcodewars)
