@@ -58,6 +58,7 @@ async def getrandomkata(message,args, prefix):
     elif len(args) == 2:
         lvl = await get_and_check_lvl(args[0],message,args)
         if lvl == False: return
+        args.pop(0)
 
         topic = await get_and_check_topic(args,topics,message,prefix)
         if topic == False: return
