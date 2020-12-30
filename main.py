@@ -39,10 +39,10 @@ async def on_guild_join(guild):
 
     await guild.text_channels[0].send(embed=embedVar)
 @client.event
-    async def on_guild_remove(guild):
-        print(f"I was removed from {guild.name} (id: {guild.id})")
-        n_servers -= 1
-        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=f" codewars.com | Active in {n_servers}"))#Set the presence again
+async def on_guild_remove(guild):
+    print(f"I was removed from {guild.name} (id: {guild.id})")
+    n_servers -= 1
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=f" codewars.com | Active in {n_servers}"))#Set the presence again
 @client.event
 async def on_message(message):
     args = message.content.split(' ')
