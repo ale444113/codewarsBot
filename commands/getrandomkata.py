@@ -63,7 +63,7 @@ async def getrandomkata(message,args, prefix):
         topic = await get_and_check_topic(args,topics,message,prefix)
         if topic == False: return
 
-        kata_data = await getkata(None, lvl, None, topics)
+        kata_data = await getkata(None, lvl, topic, topics)
 
     elif len(args) >= 3:
         lvl = await get_and_check_lvl(args[0],message,args)
