@@ -47,6 +47,6 @@ async def on_message(message):
     elif cmd.lower() == "github" or cmd.lower() == "githubs": await github(message,args)
     elif cmd.lower() == "getrandomkata": await getrandomkata(message,args, PREFIX)
     elif cmd.lower() == "topics" or cmd.lower() == "topic": await topics(message,args)
-    elif cmd.lower() == "languagues" or cmd.lower() == "languague": await languagues(message,args)
+    elif cmd.lower() == "languages" or cmd.lower() == "language": await languagues(message,args)
 
 client.run(TOKEN)

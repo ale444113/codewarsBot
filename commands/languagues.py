@@ -1,7 +1,7 @@
 import discord
 languagues_list = ["Javascript", "Coffeescript", "Ruby", "Python", "Haskell", "Clojure", "Java", "Csharp", "Elixir", "Cpp", "Typescript", "Php", "Crystal", "Dart", "Rust", "Fsharp", "Swift", "Go", "Shell", "C", "Lua", "Sql", "Bf", "R", "Nim", "Erlang", "Objc", "Scala", "Kotlin", "Solidity", "Groovy", "Fortran", "Nasm", "Julia", "Powershell", "Purescript", "Elm", "Ocaml", "Reason", "Idris", "Racket", "Agda", "Coq", "Vb", "Forth", "Factor", "Prolog", "Cfml", "Lean", "Cobol", "Haxe", "Commonlisp", "Raku", "Perl", "Pascal"]
 languagues_list.sort()
-async def languagues(message, args):
+async def languages(message, args):
     languagues_for_embed = ''
     for l in languagues_list:
         if (len(languagues_for_embed.split(' ')) % 10 == 0): languagues_for_embed += " \n"
