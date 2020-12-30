@@ -79,7 +79,7 @@ async def getrandomkata(message,args, prefix):
 
         kata_data = await getkata(language, lvl, topic, topics)
 
-    embed_kata = discord.Embed(title=f"💥 {kata_data['name']} 💥", description=f"Hello {message.author.name} here is a random kata", color=0x00FFFF)
+    embed_kata = discord.Embed(title=f"💥 {kata_data['name']}", description=f"Hello {message.author.name} here is a random kata", color=0x00FFFF)
     embed_kata.add_field(name="Category", value=kata_data['category'].capitalize(), inline=False)
 
     languages = ""
