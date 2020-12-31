@@ -26,9 +26,24 @@ async def getuserinfo(message,args):
     except:
         skills = "N/A" #If it doesn't have skills pass
 
+    #Fix so embed have less than 1024 words
+    add_and_more = False
+    languages = languages.split(' ')
+    while len(languages) > 80:
+        add_and_more = True
+        languages.pop(len(languages)-1)
+    if add_and_more: 
+        languages.append('and')
+        languages.append('more...')
+    languages = ' '.join([x for x in languages])
     embed_with_user_data.add_field(name="💻 Languagues and skills", value=f"Languages: {languages} \n Skills: {skills}", inline=False)
     embed_with_user_data.add_field(name="💾 Code Challenges", value=f"Authored: {data['codeChallenges']['totalAuthored']} \n Completed: {data['codeChallenges']['totalCompleted']}", inline=True)
     
+    embed_with_user_data.add_field(name="💻 Languagues and skills", value=f"Languages: {languages} \n Skills: {skills}", inline=False)
+    embed_with_user_data.add_field(name="💾 Code Challenges", value=f"Authored: {data['codeChallenges']['totalAuthored']} \n Completed: {data['codeChallenges']['totalCompleted']}", inline=True)
+    
+    
+
     kyu_level = data['ranks']['overall']['rank']
     if kyu_level == -1: embed_with_user_data.set_image(url="https://i.ibb.co/16whS56/1.png")
     elif kyu_level == -2: embed_with_user_data.set_image(url="https://i.ibb.co/MDBvfKw/2.png")
