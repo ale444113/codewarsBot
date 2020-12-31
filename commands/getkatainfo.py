@@ -37,6 +37,6 @@ async def getkatainfo(message,args):
     except: 
         aproved = "N/A"
         aproved_url = "N/A"
-    embed_with_user_data.add_field(name="👩 Users involve in the kata", value=f"[Created by: {author}]({author_url}) \n [Approved by: {aproved}]({aproved_url}", inline=False)
+    embed_with_user_data.add_field(name="👩 Users involve in the kata", value=f"[Created by: {author}]({author_url}) \n [Approved by: {aproved}]({aproved_url})", inline=False)
     embed_with_user_data.add_field(name="📬 Collected info ", value=f"Total attempts: {data['totalAttempts']} \n Total completes: {data['totalCompleted']} \n Total stars: {data['totalStars']} \n Issues: {data['unresolved']['issues']} \n", inline=True)
     await message.channel.send(embed=embed_with_user_data)
