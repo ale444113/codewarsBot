@@ -40,7 +40,7 @@ async def on_guild_join(guild):
     n_servers += 1
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name=f" codewars.com | Active in {n_servers} servers"))#Set the presence again
 
-    for channel in range(guild.text_channels):
+    for channel in range(len(guild.text_channels)):
         try:
             await guild.text_channels[channel].send(embed=embedVar)
             break
