@@ -19,9 +19,13 @@ async def getuserinfo(message,args):
     languages = ""
     skills = ""
     for x in data['ranks']['languages']: languages += f"{x.capitalize()}: {data['ranks']['languages'][x]['name']}, {data['ranks']['languages'][x]['color']}, {str(data['ranks']['languages'][x]['score'])} score \n"
-    for skill in data['skills']: skills += skill + ", "
-    if skills != '': skills = skills[:len(skills)-2] 
-    if skills == '': skills = "N/A"
+    try:
+        for skill in data['skills']: skills += skill + ", "
+        if skills != '': skills = skills[:len(skills)-2] 
+        if skills == '': skills = "N/A"
+    except:
+        skills = "N/A" #If it doesn't have skills pass
+
     embed_with_user_data.add_field(name="💻 Languagues and skills", value=f"Languages: {languages} \n Skills: {skills}", inline=False)
     embed_with_user_data.add_field(name="💾 Code Challenges", value=f"Authored: {data['codeChallenges']['totalAuthored']} \n Completed: {data['codeChallenges']['totalCompleted']}", inline=True)
     
