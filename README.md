@@ -1,7 +1,7 @@
 ![codewars](https://jungladigital.com/wp-content/uploads/2019/03/codewars-800-350.png)
 
 ![stars](https://img.shields.io/github/stars/ale444113/codewarsBot?style=social)    ![forks](https://img.shields.io/github/forks/ale444113/codewarsBot?style=social)    ![commits](https://img.shields.io/github/last-commit/ale444113/codewarsBot)
-# 🤖 codewarsBot (The non official [Codewars](https://www.codewars.com/) Disicord Bot!)
+# 🤖 codewarsBot (The non official [Codewars](https://www.codewars.com/) Discord Bot!)
 **codewarsBot is a *non official* Discord bot made to level up your Codewars experience while you're hanging out on Discord!**
 
 ## 🚀 Commands and functionalities
